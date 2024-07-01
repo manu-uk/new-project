@@ -1,0 +1,14 @@
+name: 05-workflow-types
+on:
+    pull_request:
+        types:
+            - opened
+            - closed
+        branches:
+            - main
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "This message means a PR is opened or closed"
