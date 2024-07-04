@@ -2,12 +2,12 @@ name: context-file
 on: push
 
 env:
-MY_ENV_VARIABLE: 'step'
+    MY_ENV_VARIABLE: 'step'
 jobs:
-    env:
-        MY_ENV_VARIABLE: 'job'
     echo-context:
         runs-on: ubuntu-latest
+        env: 
+            MY_ENV_VARIABLE: 'job'
         steps:
             - run: |
                 echo "event: ${{github.event}}"
@@ -16,7 +16,6 @@ jobs:
                 echo "actor: ${{github.actor}}"
                 echo "workflow: ${{github.workflow}}"
                 echo "run-id: ${{github.run_id}}"
-
             - run: |
                 echo "variable: ${{vars.MY_VAR}}"
                 echo "env: ${{env.MY_ENV_VARIABLE}}"
