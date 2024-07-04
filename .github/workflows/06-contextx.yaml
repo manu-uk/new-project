@@ -1,5 +1,5 @@
 name: context-file
-on: push
+on: workflow_dispatch
 
 env:
     MY_ENV_VARIABLE: 'step'
