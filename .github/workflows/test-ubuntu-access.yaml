@@ -1,0 +1,7 @@
+name: test ubuntu ssh
+on: push
+jobs:
+    ssh:
+        runs-on: ubuntu:latest
+        steps:
+            - run: ip address
