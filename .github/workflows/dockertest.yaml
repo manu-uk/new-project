@@ -8,4 +8,8 @@ jobs:
               with:
                 username: ${{secrets.DOCKERHUB_USERNAME}}
                 password: ${{secrets.DOCKERHUB_TOKEN}}
-            - run: sudo apt-get install docker -y
+            - run: |
+                sudo apt-get install docker -y
+                docker pull nginx
+                docker tag nginx masterdevopstools/nginx
+                docker push masterdevopstools/nginx
