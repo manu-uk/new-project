@@ -1,0 +1,7 @@
+name: test_docker_access
+on: push
+jobs:
+    display:
+        runs-on: ubuntu-latest
+        steps:
+            - run: pwd
