@@ -10,8 +10,9 @@ jobs:
     echo:
         runs-on: ubuntu-latest
         steps:
-            - name: [debug] print start up data
-              if: $input.debug && 'ON'
-              echo "Triggered by: ${{github.event}}"
-              echo "Branch: ${{github.ref}}"
-              echo "OS: ${{RUNNER_OS}}"
+            - name: '[debug] print start up data'
+              if: ${{inputs.debug}} && 'ON'
+              run: |
+                echo "Triggered by: ${{github.event}}"
+                echo "Branch: ${{github.ref}}"
+                echo "OS: ${{runner.os}}"
