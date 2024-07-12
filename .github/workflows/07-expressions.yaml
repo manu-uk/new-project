@@ -16,3 +16,5 @@ jobs:
                 echo "Triggered by: ${{github.event}}"
                 echo "Branch: ${{github.ref}}"
                 echo "OS: ${{runner.os}}"
+            - name: Greetings
+              run: echo "hello world"
