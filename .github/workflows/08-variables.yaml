@@ -12,7 +12,8 @@ jobs:
             OVERWRITTEN: 'I have been overwritten at the job level'
         runs-on: ubuntu-latest
         steps:
-            - env:
+            - name: Print Env Variables
+              env:
                 STEP_VAR: 'I am a step env var'
                 step_var2: 'I am another step var'
               run: |
@@ -21,8 +22,9 @@ jobs:
                 echo "job env var: ${{env.JOB_VAR}}"
                 echo "workflow env var: ${{env.WORKFLOW_VAR}}"
                 echo "overwritten var: ${{env.OVERWRITTEN}}"
-            - env:
+            - name: Overwrite Job Variable
+              env:
                 OVERWRITTEN: 'I have been overwritten at the step level'
               run: |
-                echo "overwritten var: ${{env.OVERWRITTEN}}"
+                echo "overwritten var: ${{env.overwritten}}"
 
