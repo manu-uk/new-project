@@ -8,4 +8,4 @@ jobs:
       run: echo "Hello World"
 
     - name: Say Goodbye
-      run: echo "Goodbye"
+      run: echo "Goodbye all"
