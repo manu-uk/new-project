@@ -4,6 +4,6 @@ jobs:
     test-expression:
         runs-on: ubuntu-latest
         steps:
-            - run: echo" test"
+            - run: echo "test"
             - if: ${{ !cancelled() }}
-              run: echo" failed"
+              run: echo "failed"
