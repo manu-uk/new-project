@@ -1,9 +1,17 @@
 name: 09-controlling-expressions
-on: push
+on: 
+    workflow_dispatch:
+        inputs:
+            debug:
+                type: boolean
+                default: true
+
 jobs:
     test-expression:
         runs-on: ubuntu-latest
         steps:
             - run: echo "test"
-            - if: ${{ !cancelled() }}
+            - if: ${{ inputs.debug == false }}
+              run: exit 1
+            - if: ${{failure()}}
               run: echo "failed"
