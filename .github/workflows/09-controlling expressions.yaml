@@ -1,0 +1,9 @@
+name: 09-controlling-expressions
+on: push
+jobs:
+    test-expression:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo" test"
+            - if: ${{!cancelled}}
+              run: echo" failed"
