@@ -16,3 +16,5 @@ jobs:
             - if: ${{cancelled()}}
               run: echo "cancelled"
             - run: echo "next step"
+            - if: ${{failure}}
+              run: echo "failed step"
